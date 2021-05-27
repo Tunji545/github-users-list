@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form {
+  width: 100%;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  display: flex;
+  padding: 10%;
+  margin-bottom: 40px;
+}
+
+.form input[placeholder] {
+  width: 70%;
+  padding: 20px;
+  font-size: 1.8rem;
+}
+
+.form button {
+  width: 30%;
+  padding: 20px;
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: bold;
+  background-color: lightgray;
+}
+
+.github-profile {
+  display: flex;
+  font-size: 2.1rem;
+}
+
+.github-profile img {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details .name {
+  margin-bottom: 20px;
+}
