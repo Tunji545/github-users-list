@@ -67,3 +67,7 @@ body {
   margin-bottom: 20px;
   font-weight: bold;
 }
+
+.details .bio {
+  font-size: 1.4rem;
+}
