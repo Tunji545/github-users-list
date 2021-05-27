@@ -1,11 +1,15 @@
 import React from 'react';
-import dataJson from './dataJson';
 class Card extends React.Component {
   render() {
-    const profile = { ...dataJson[0] };
+    const profile = this.props;
     return (
       <div className='github-profile'>
-        <img src={profile.avatar_url} alt='cross.jpg' />
+        <img
+          src={profile.avatar_url}
+          width='100'
+          height='100'
+          alt='cross.jpg'
+        />
         <div className='details'>
           <p className='name'>{profile.name}</p>
           <p className='bio'>{profile.bio}</p>
