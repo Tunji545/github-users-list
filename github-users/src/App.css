@@ -48,14 +48,20 @@ body {
   background-color: lightgray;
 }
 
-.github-profile {
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.github-profile-left {
   display: flex;
   font-size: 2.1rem;
 }
 
-.github-profile img {
+.github-profile-left img {
   margin-right: 20px;
   margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 .details {
@@ -68,6 +74,19 @@ body {
   font-weight: bold;
 }
 
-.details .bio {
+.details .followers {
   font-size: 1.4rem;
+}
+
+.top-4 {
+  position: relative;
+  float: left;
+  margin-right: 1rem;
+  font-size: 1.8rem;
+}
+
+.repositories {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
