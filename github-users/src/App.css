@@ -67,26 +67,20 @@ body {
 .details {
   display: flex;
   flex-direction: column;
-}
-
-.details .name {
-  margin-bottom: 20px;
+  justify-content: space-evenly;
   font-weight: bold;
-}
-
-.details .followers {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .top-4 {
   position: relative;
   float: left;
   margin-right: 1rem;
-  font-size: 1.8rem;
 }
 
-.repositories {
-  margin-bottom: 2rem;
+button {
+  padding: 1rem;
+  color: #888;
   font-size: 1.4rem;
-  font-weight: bold;
+  text-transform: uppercase;
 }
