@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 const Card = (props) => {
   const [repos, setRepos] = useState([]);
   const [forks, setForks] = useState([]);
+
   const getRepoUrls = async (url) => {
     const resp = await axios.get(url);
     console.log(resp);
@@ -40,23 +42,23 @@ const Card = (props) => {
         </div>
       </div>
       <div className='github-profile-right'>
-        <button
-          className='top-4'
-          onClick={() => getRepoUrls(profile.repos_url)}
-        >
-          <ul>
-            {repos.map((starred) => (
-              <>
-                <li>{starred.full_name}</li>
-                <li key={starred.id}>
-                  {starred.stargazers_count > 1 ? 'YES' : 'NO'}
-                </li>
-                <li key={starred.id}>STARS COUNT:{starred.stargazers_count}</li>
-              </>
-            ))}
-          </ul>
-          STARRED REPOS
-        </button>
+        <div className='details'>
+          <button
+            className='top-4'
+            onClick={() => getRepoUrls(profile.repos_url)}
+          >
+            <ul>
+              {repos.map((starred) => (
+                <>
+                  <li>{starred.full_name}</li>
+                  <li>{starred.stargazers_count > 1 ? 'YES' : 'NO'}</li>
+                  <li>STARS COUNT:{starred.stargazers_count}</li>
+                </>
+              ))}
+            </ul>
+            STARRED REPOS
+          </button>
+        </div>
         <div className='details'>
           <button
             className='starred'
@@ -66,10 +68,8 @@ const Card = (props) => {
               {forks.map((forked) => (
                 <>
                   <li>{forked.full_name}</li>
-                  <li key={forked.id}>
-                    Forked? {forked.forks_count > 0 ? 'YES' : 'NO'}
-                  </li>
-                  <li key={forked.id}>Number of Forks: {forked.forks_count}</li>
+                  <li>Forked? {forked.forks_count > 0 ? 'YES' : 'NO'}</li>
+                  <li>Number of Forks: {forked.forks_count}</li>
                 </>
               ))}
             </ul>

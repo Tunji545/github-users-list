@@ -21,7 +21,7 @@ body {
 
 .container h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .form {
@@ -50,7 +50,8 @@ body {
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  margin: 10rem auto;
 }
 
 .github-profile-left {
@@ -64,23 +65,27 @@ body {
   border-radius: 50%;
 }
 
-.details {
+.github-profile-right {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  font-weight: bold;
-  font-size: 1.8rem;
-}
-
-.top-4 {
-  position: relative;
-  float: left;
-  margin-right: 1rem;
+  justify-content: space-between;
 }
 
 button {
-  padding: 1rem;
+  /* padding: 1rem; */
   color: #888;
   font-size: 1.4rem;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  margin-bottom: 10px;
+}
+
+ul li {
+  list-style-type: none;
+  color: #222;
+  padding: 0.5rem;
+  line-height: 2rem;
 }
