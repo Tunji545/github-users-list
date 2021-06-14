@@ -1,28 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardList from '../src/components/CardList';
 import Form from '../src/components/Form';
 import './App.css';
 
-class App extends React.Component {
-  state = {
-    data: [],
+const App = () => {
+  const [data, setData] = useState([]);
+
+  const addNewUser = (profileData) => {
+    setData([...data, profileData]);
   };
 
-  addNewUser = (profileData) => {
-    this.setState((prevState) => ({
-      data: [...prevState.data, profileData],
-    }));
-  };
-
-  render() {
-    return (
-      <div className='container'>
-        <h1 className='title'>The Github Card Users</h1>
-        <Form onSubmit={this.addNewUser} />
-        <CardList profiles={this.state.data} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className='container'>
+      <h1 className='title'>The Github Card Users</h1>
+      <Form onSubmit={addNewUser} />
+      <CardList profiles={data} />
+    </div>
+  );
+};
 
 export default App;
