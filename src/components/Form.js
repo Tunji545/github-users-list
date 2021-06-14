@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from './utils/API';
 
 const Form = (props) => {
   const [userName, setUserName] = useState('');
@@ -7,7 +7,8 @@ const Form = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const resp = await axios.get(`https://api.github.com/users/${userName}`);
+    const resp = await API.get(`/${userName}`);
+    console.log(resp);
 
     props.onSubmit(resp.data);
     setUserName('');
