@@ -27,7 +27,7 @@ const Form = (props) => {
         required
         onChange={handleChange}
       />
-      <button>Add Card</button>
+      <button>Search User</button>
     </form>
   );
 };

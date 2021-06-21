@@ -7,7 +7,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   const addNewUser = (profileData) => {
-    setData([...data, profileData]);
+    setData([profileData]);
   };
 
   return (

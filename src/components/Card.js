@@ -26,54 +26,70 @@ const Card = (props) => {
   const profile = props;
   return (
     <div className='wrapper'>
-      <div className='github-profile-left'>
+      <div className='image'>
         <img
           src={profile.avatar_url}
           width='200'
           height='200'
           alt='cross.jpg'
         />
-        <div className='details'>
+        <p className='name1'>{profile.name}</p>
+      </div>
+      <div className='flex'>
+        <div className='details-left'>
           <p className='name'>{profile.name}</p>
           <p className='followers'>Followers: {profile.followers}</p>
-          <p className='repositories'>
-            Repositories Counts: {profile.public_repos}
-          </p>
+          <p className='repos'>Repos Counts: {profile.public_repos}</p>
         </div>
-      </div>
-      <div className='github-profile-right'>
-        <div className='details'>
+        <div className='details-right'>
           <button
-            className='top-4'
+            className='title  margin'
             onClick={() => getRepoUrls(profile.repos_url)}
           >
             <ul>
               {repos.map((starred) => (
                 <>
-                  <li>{starred.full_name}</li>
-                  <li>{starred.stargazers_count > 1 ? 'YES' : 'NO'}</li>
-                  <li>STARS COUNT:{starred.stargazers_count}</li>
+                  <li>
+                    <span>Name of Repo:</span> {starred.full_name}
+                  </li>
+                  <li>
+                    <span>Starred?</span>{' '}
+                    {starred.stargazers_count > 1 ? 'YES' : 'NO'}
+                  </li>
+                  <li>
+                    <span>STARS COUNT:</span>
+                    {starred.stargazers_count}
+                  </li>
+                  <hr />
                 </>
               ))}
             </ul>
-            STARRED REPOS
+            <span className='title'>STARRED REPOS</span>
           </button>
         </div>
         <div className='details'>
           <button
-            className='starred'
+            className='title  margin'
             onClick={() => forkedRepos(profile.repos_url)}
           >
             <ul className='row'>
               {forks.map((forked) => (
                 <>
-                  <li>{forked.full_name}</li>
-                  <li>Forked? {forked.forks_count > 0 ? 'YES' : 'NO'}</li>
-                  <li>Number of Forks: {forked.forks_count}</li>
+                  <li>
+                    <span>Name of Repo:</span> {forked.full_name}
+                  </li>
+                  <li>
+                    <span>Forked? </span>{' '}
+                    {forked.forks_count > 0 ? 'YES' : 'NO'}
+                  </li>
+                  <li>
+                    <span>Forked Count: </span> {forked.forks_count}
+                  </li>
+                  <hr />
                 </>
               ))}
             </ul>
-            Forked REPOS
+            <span className='title'>Forked REPOS</span>
           </button>
         </div>
       </div>
